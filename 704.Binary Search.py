@@ -8,7 +8,7 @@ class Solution:
             mid = int((left + right) / 2)
             # the definition of mid in official solution is:
             # mid = left + (right - left) // 2
-            # but that takes 50% more memory usage
+            # but that takes more memory usage
             if nums[mid] == target:
                 return mid
             elif nums[mid] < target:
