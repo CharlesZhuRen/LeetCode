@@ -3,6 +3,10 @@ from collections import deque
 
 class Solution:
     def floodFill(self, image: list[list[int]], sr: int, sc: int, newColor: int) -> list[list[int]]:
+
+        # This is a solution based on bfs, which is more inline with my intuition
+        # It can also be implemented by dfs: fill, fill, fill...nothing to fill, go back, fill, fill...
+
         old_color = image[sr][sc]
 
         # if needless to update...
