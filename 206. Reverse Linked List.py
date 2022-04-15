@@ -1,3 +1,4 @@
+import collections
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -8,16 +9,15 @@ class Solution:
         if not head:
             return None
         """
-        1. iterate the linkedlist
-        2. reverse order of values
-        3. reconstruct the linkedlist and then return it
+        1. iterate the linkedlist and store values in a queue
+        3. pop values from the queue, reconstruct the linkedlist and then return it
         """
-        values = []
+        values = collections.deque()
         while head:
-            values.append(head.val)
+            values.appendleft(head.val)
             head = head.next
         dummy = cur = ListNode(0)
-        for value in values[::-1]:
-            cur.next = ListNode(value)
+        while values:
+            cur.next = ListNode(values.popleft())
             cur = cur.next
         return dummy.next
