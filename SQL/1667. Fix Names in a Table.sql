@@ -1,6 +1,6 @@
 SELECT
     user_id,
-    CONCAT(Upper(left(name,1)),Lower(substring(name,2))) AS name
+    CONCAT(Upper(left(name, 1)), Lower(substring(name, 2))) AS name
 FROM
     users
 ORDER BY
