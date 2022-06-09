@@ -14,6 +14,8 @@ class Solution:
 2. merge 2 lists and find the median
     - if the length is odd, then just return the median
     - else, compute and return the ave of medians
+
+There should be more complex methods but...why not use an existing wheel?
 """
 
 if __name__ == '__main__':
