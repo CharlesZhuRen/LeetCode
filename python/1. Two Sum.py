@@ -1,11 +1,14 @@
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
-        hashtable = dict()  # <num: index>
+        d = dict()
         for i, num in enumerate(nums):
-            if target - num in hashtable:  # the time complexity of look for in hashtable is O(1)
-                return [hashtable[target - num], i]  # index of sub, index of num
-            hashtable[nums[i]] = i  # the sub is not found, then store <num: index of num>
-        return []
+
+            sub = target - num
+
+            if d.get(sub) is not None:
+                return d[sub], i
+            else:
+                d[num] = i
 
 
 if __name__ == '__main__':
