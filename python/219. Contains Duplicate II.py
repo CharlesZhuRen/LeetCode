@@ -16,7 +16,7 @@ class Solution:
 
         # return False
 
-        pos = {}
+        pos = {}  # key=num, value=previous position，一次遍历即可
         for i, num in enumerate(nums):
             if num in pos and i - pos[num] <= k:
                 return True
