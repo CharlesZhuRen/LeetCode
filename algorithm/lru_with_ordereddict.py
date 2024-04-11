@@ -11,7 +11,7 @@ class LRUCache:
         else:
             # 更新这个key在所有key中的顺序，也就是把它移动到最后
             self.cache.move_to_end(key)
-            return
+            return self.cache[key]
 
     def put(self, key, value):
         if key in self.cache:  # 如果key已经存在，移动到最后
