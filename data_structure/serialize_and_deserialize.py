@@ -20,9 +20,11 @@ def serialize(root: Node) -> str:
 
         if cur is None:
             nodes.append(None)
-            # togo.append(None) 不注释掉会有错
+            # 如果这个节点是none，那么它的子节点就完全没有意义啊，因为build的时候它也不会作为父节点啊，所以也不需要过度的“完全”
+            # togo.append(None)
             # togo.append(None)
         else:
+            # 如果这个节点不是None，那么即便它的子节点都是none，也要加进togo里
             nodes.append(cur.val)
             togo.append(cur.left)
             togo.append(cur.right)
@@ -105,4 +107,8 @@ if __name__ == '__main__':
 
     # case 5
     root = Node(1, left=Node(2), right=Node(3, left=Node(4), right=Node(5)))
+    test(root)
+
+    # case 6
+    root = Node(1, right=Node(2, right=Node(3, left=Node(4))))
     test(root)
