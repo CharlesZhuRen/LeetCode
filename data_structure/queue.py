@@ -14,8 +14,10 @@ class Queue(object):
         self.items.insert(0, item)
 
     def dequeue(self):
-        """出队列, 即始终pop最后一个元素"""
-        """当然也可以append+pop(0), 到底哪一端进哪一端出并不重要"""
+        """
+        出队列, 即始终pop最后一个元素
+        当然也可以append+pop(0), 到底哪一端进哪一端出并不重要
+        """
         return self.items.pop()
 
     def size(self):
