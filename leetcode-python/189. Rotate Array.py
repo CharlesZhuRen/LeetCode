@@ -8,6 +8,7 @@ class Solution:
         nums[:] = nums[n - k:] + nums[:n - k]
         # note that "nums[:] =" is different from "nums ="
         # the former works while the latter doesn't
+        # "nums[:]="是对外部传入对nums进行切片赋值操作，"num="是在函数内部创建了一个局部变量，对外部对nums没有影响
 
         print(nums)
 
