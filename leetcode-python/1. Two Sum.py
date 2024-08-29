@@ -1,6 +1,8 @@
 class Solution:
-    def twoSum(self, nums: list[int], target: int) -> list[int]:
-        d = dict()
+    def twoSum(self, nums: list[int], target: int) -> tuple[int, int]:
+        d = dict() # num: index of num
+
+        # 只遍历一次，这样就解决了数字数值相同但是位置不同的问题，反正两个数必然一前一后被写入dict
         for i, num in enumerate(nums):
 
             sub = target - num
