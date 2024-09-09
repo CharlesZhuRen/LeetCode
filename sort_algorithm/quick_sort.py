@@ -30,6 +30,7 @@ def quick_sort(nums: list[int], left: int, right: int):
 
     pivot = partition(nums, left, right)
 
+    # TODO: 尾递归优化
     quick_sort(nums, left, pivot - 1)
     quick_sort(nums, pivot + 1, right)
 
