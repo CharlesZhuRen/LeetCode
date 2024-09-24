@@ -14,13 +14,14 @@ class Solution:
         is to define f(i):
         How do we realize to define it as the max sum "ended with i"?
         """
-        pre, maxAns = 0, nums[0]
+        curSum, maxSum = 0, nums[0]
 
-        for i in nums:
-            pre = max(pre + i, i)  # f(i) ended with current i
-            maxAns = max(maxAns, pre)  # the max one
+        for num in nums:
+            curSum = max(curSum + num, num)
+            maxSum = max(maxSum, curSum)
 
-        return maxAns
+        return maxSum
+
 
 
 if __name__ == '__main__':
